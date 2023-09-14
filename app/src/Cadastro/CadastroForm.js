@@ -6,10 +6,8 @@ class CadastroForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nome: '',
-      cpf: '',
-      email: '',
-      dataNascimento: '',
+      user: '',
+      pwd: '',
     };
   }
 
@@ -33,39 +31,21 @@ class CadastroForm extends Component {
             <label>Nome:</label>
             <input
               type="text"
-              name="nome"
-              value={this.state.nome}
+              name="user"
+              value={this.state.user}
               onChange={this.handleChange}
             />
           </div>
           <div>
-            <label>CPF:</label>
+            <label>Senha</label>
             <input
-              type="text"
-              name="cpf"
-              value={this.state.cpf}
+              type="password"
+              name="pwd"
+              value={this.state.pwd}
               onChange={this.handleChange}
             />
           </div>
-          <div>
-            <label>E-mail:</label>
-            <input
-              type="email"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <label>Data de Nascimento:</label>
-            <input
-              type="date"
-              name="dataNascimento"
-              value={this.state.dataNascimento}
-              onChange={this.handleChange}
-            />
-          </div>
-          <button type="submit">Enviar</button>
+          <button type="submit">Cadastrar</button>
         </form>
       </div>
     );

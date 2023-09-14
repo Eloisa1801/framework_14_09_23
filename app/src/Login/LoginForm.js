@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './LoginForm.css'; //
-
+import { Link } from 'react-router-dom';
+import CadastroForm from './CadastroForm';
+<Route path="/cadastro" component={CadastroForm} />
 class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cpf: '',
-      dataNascimento: '',
+      user: '',
+      pwd: '',
     };
   }
 
@@ -17,7 +19,7 @@ class LoginForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // adicionar autenticação com token.
+    // Adicionar lógica para enviar
     console.log(this.state);
   }
 
@@ -27,27 +29,30 @@ class LoginForm extends Component {
         <h2>Login</h2>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <label>CPF:</label>
+            <label>Nome de Usuário:</label>
             <input
               type="text"
-              name="cpf"
-              value={this.state.cpf}
+              name="user"
+              value={this.state.user}
               onChange={this.handleChange}
               className="form-input"
             />
           </div>
           <div>
-            <label>Data de Nascimento:</label>
+            <label>Senha:</label>
             <input
-              type="date"
-              name="dataNascimento"
-              value={this.state.dataNascimento}
+              type="password"
+              name="pwd"
+              value={this.state.pwd}
               onChange={this.handleChange}
               className="form-input"
             />
           </div>
           <button type="submit" className="form-button">Entrar</button>
         </form>
+        <Link to="/cadastro">
+          <button>Cadastrar</button>
+        </Link>
       </div>
     );
   }
